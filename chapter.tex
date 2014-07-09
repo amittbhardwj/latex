@@ -1,0 +1,232 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{auto-pst-pdf}
+\usepackage{amsmath}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{framed}
+\usepackage{gensymb}
+\title{Maths in \LaTeX}
+\author{Ashu \& Amitt}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+	\chapter{Homogeneous function and Euler's theorem}
+		\textbf{\textit{Question}}: Explain homogeneous functions and derive euler's theorem on homogeneous function.
+	    \\[12pt]
+		\noindent \textbf{\textit{Solution}}:
+		A function \(f(x,y)\) is said to be homogeneous of degree (or order) $n$ in the variable $x$ and $y$ if it can be  expressed in the form \(x^n\phi(\frac{y}{x})\) or \(y^n\phi(\frac{x}{y})\). \\[8pt]
+		An alternative test for a function f(x,y) to be homogeneous of degree(or order) $n$ is that \\
+		\hspace*{5em} \(f(tx,ty)=t^nf(x,y)\) \\
+		 \\[8pt]
+		 For example,if \(f(x,y)=\dfrac{x+y}{\sqrt{x}+\sqrt{y}}\),then
+		 \\[8pt]
+		\hspace*{5em}  \(f(x,y)=\dfrac{x\left(1+\dfrac{y}{x}\right)}{\sqrt{x}(1+\sqrt{\frac{y}{x}}}=x^\frac{1}{2}\phi\left(\dfrac{y}{x}\right)\)
+		\\[8pt]
+		$\Rightarrow$ $f(x,y)$ is a homogeneous function of degree $\frac{1}{2}$ in $x$ and $y$. \\[8pt]
+		\hspace*{5em} $f(x,y)=\dfrac{y(1+\dfrac{x}{y})}{\sqrt{y}\left(1+\sqrt{\dfrac{x}{y}}\right)}=y^\frac{1}{2}\phi(\dfrac{x}{y})$
+		\\[8pt]
+		$\Rightarrow$ $f(x,y)$ is a homogeneous function of degree $\frac{1}{2}$ in $x$ and $y$. \\[8pt]
+		\textbf{\underline{Euler's theorem on homogeneous function}}\\[8pt]
+		{\itshape If u is homogeneous function of degree n in xand y, then \(\dfrac{\partial{u}}{\partial{x}} + y\dfrac{\partial{u}}{\partial{y}}=nu\).}
+		\\[8pt]
+		Since u is a homogeneous function of degree n in x and y, it can be expressed
+		\begin{align}
+			u =& x^nf\left(\dfrac{y}{x}\right) \\
+			\dfrac{\partial{u}}{\partial{x}}=&nx^n-1f\left(\dfrac{y}{x}\right)+x^n f'\left(\dfrac{y}{x}\right).\left(-\dfrac{y}{x^2}\right) \\
+			\Rightarrow x\dfrac{\partial{u}}{\partial{x}}=&nx^nf\left(\dfrac{y}{x})-x^n-1 yf' \frac{y}{x}\right)  \\
+			\dfrac{\partial{u}}{\partial{y}}=&x^nf'\left(\dfrac{y}{x}\right).\dfrac{1}{x}=x^n-1 f'\left(\dfrac{y}{x}\right) \\
+			\Rightarrow y\dfrac{\partial{u}}{\partial{y}}=&x^n-1yf'\left({\dfrac{y}{x}}\right)
+		\end{align}
+		Adding (1.1) and (1.3), we get \(x\dfrac{\partial{u}}{\partial{x}} + y\dfrac{\partial{u}}{\partial{y}}=nx^nf\left(\dfrac{y}{x}\right)=nu\).
+	\chapter{Maxima and Minima}
+		\textbf{\textit{Question}}: Examine the function \(x^3+y^3-3axy\) for maxima and minima.
+		\\[10pt]
+		\textbf{\textit{Solution}}:Here \(f(x,y)=x^3+y^3-3axy \\[8pt]
+		\hspace*{5em} f_x=3x^2-3ay,\: f_y=3y^2-3ax,\: f_{xx}=6x,\: f_xy=-3a,\: f_{yy}=6y \) \\[8pt]
+		 Now for extreme values \qquad \(f_x=f_y=0\) \\[8pt]
+		$\Rightarrow$ \qquad $x^2-ay=0$ and $y^2-ax=0$ \\[8pt]
+		$\Rightarrow$ \qquad $y=\dfrac{x^2}{a}$ \\[8pt]
+		$\therefore$  $\dfrac{x^4}{a^2}-ax=0$\: or\: $x(x^2-a^2)=0$\: or\: $x=0$,\: a when \\[5pt]
+		$x=0$, $y=0$; when $x=a,y=a$ \\[8pt]
+		$\therefore$\: There are two stationary points $(0,0)$ and $(a,a)$ \\[8pt]
+		Now $rt-s^2=36xy-9a^2$ \\[8pt]
+		\textbf{At (0,0)}\: \(rt-s^2=-9a^2 < 0\) \\[8pt]
+		$\Rightarrow$ \qquad There is no extreme value at \((0,0)\). \\[8pt]
+		\textbf{At (a,a)}\: \(rt-s^2=36a^2-9a^2=27a^2 > 0\) \\[8pt]
+		$\Rightarrow$ \qquad $f(x,y)$ has extreme value at (a,a). \\[8pt]
+		Now \(r=6a^2\) \\[8pt]
+		If \(a>0\), \(r>0\) so that \(f(r,y)\) has minimum value at \((a,a)\). \\[8pt]
+		Minimum value=\(f(a,a)=a^3+a^3-3a^3=-a^3\) \\ 
+
+	\chapter{Curve Tracing}
+		\textbf{\textit{Question}}:Trace the curve \(x^3 + y^3 = 3axy\).
+		\\[10pt]
+		\textbf{\textit{Solution}}: The equation of the curve is \\  
+		\hspace*{5em} \(x^3 + y^3 - 3axy=0\)\\[5pt]
+		1.\textbf{Symmetry}: The curve is neither symmetric about x-axis nor y-axis but about \(y=x\). \\[5pt]
+		2.\textbf{Origin}:The curve passess through the origin \(0,0\) and the tangents at the origin are given by \hspace*{3em} \(3axy=0\) 
+		i.e. \(x=0,y=0\) i.e. x-axis and y-axis.\\[5pt]
+		3.\textbf{Domain and Range}: From above it is clear x and y both cannot be negative \(\because\) then L.H.S will be negative but R.H.S will be positive which is impossible \\
+		$\therefore$ no protion of the curve will lie in $3^{rd}$ quadrant. \\[5pt]
+		4.\textbf{Points of Intersection}: Curve meets x-axis at $(0,0)$. Curve meets y-axis at $(0,0)$ $\therefore$\: the curve passes only thorugh $(0,0)$. \\[5pt]
+		Curve intersects\: \(y=x\)\: where\: \(x^3+x^3=3ax^2\)\: or\: \(2x^3 = 3ax^2\) or\: \(x=\dfrac{3a}{2}\)\: \(\therefore \) Points of intersection with \(y=x\) is \(\left(\dfrac{3a}{2},\dfrac{3a}{2}\right)\). \\[5pt]
+		\begin{pspicture}
+			% \psgrid{<->}(0,0)(-5,-5)(10,10)
+			\psaxes[linewidth=1.2pt,labels=all,ticks=all,linecolor=gray,tickcolor=gray]{<->}(0,0)(-5,-5)(10,10)
+			\psline[linestyle=dotted](0,0)(8,8)(-5,-5)
+			\psline[linestyle=dotted](7,0)(-3,10)(9,-2)
+			\psarc[linecolor=red]{->}(7,0){1}{0}{135}
+			\pscurve(-5,2.9)(0,0)(3.64,3)(3.5,3.5)(0.59,2)(0,0)(2.9,-5)
+			\psline(-6,3.7)(3.7,-6)
+			\rput[t]{0}(7.2,0.5){135\degree}
+			\rput[t]{0}(4.5,3.6){$(\frac{3a}{2},\frac{3a}{2})$}
+			\rput[b]{-47}(-4,1){Asymptote}
+			\rput[b]{-47}(1,-4){$x+y+a=0$}
+			\rput[b]{0}(3,-1){Tangent}
+			\rput[t]{90}(-1,4){Tangent}
+		\end{pspicture}
+		\\[200pt]
+		5.\textbf{Tangents}: To find the slope of tangent at \(\left(\dfrac{3a}{2},\dfrac{3a}{2}\right)\) diffrentiate given equation w.r.t x. \\[5pt]
+		\begin{align*}
+			3x^2+3y^2\dfrac{\mathrm{dy}}{\mathrm{dx}}=&3ax\dfrac{\mathrm{dy}}{\mathrm{dx}}+3ay \\
+			(y^2-ax)\dfrac{\mathrm{dy}}{\mathrm{dx}}=&ay-x^2 \\
+			(\dfrac{\mathrm{dy}}{\mathrm{dx}})=&\dfrac{ay-x^2}{y^-ax} \\
+			\dfrac{\mathrm{dy}}{\mathrm{dx}}_{(\frac{3a}{2},\frac{3a}{2})}=&\dfrac{\dfrac{3a^2}{2}-\dfrac{9a^2}{4}}{\dfrac{9a^2}{4}-\dfrac{3a^2}{2}}=-1 \\
+		\end{align*}
+		\(\therefore\) At \(\left(\dfrac{3a}{2},\dfrac{3a}{2}\right)\) slope of tangent = -1 \\
+		\(\therefore\) Tangent makes an angle of 135 with x-axis at \(\left(\dfrac{3a}{2},\dfrac{3a}{2}\right)\) \\
+		6.\textbf{Asymptotes}: Asymptotes of \(x^2 + y^3 = 3axy\) are given by putting \(x=1,y=m\) \\
+		\begin{align*}
+			\phi_3(m)=& 1+m^3 ,\phi'_3(m)=3m^2, \phi''_3(m)=6m \\
+			\phi_2(m) =& -3am, \phi'_2(m)=-3a, \\
+			\phi_3(m)=& 0\: given\: 1+m^3 = 0 
+		\end{align*}
+		or \((1+m)(1-m+m^2)=0 \) only real value of m is -1. \\
+		\(\therefore\)\: Asymptote with slope \(m=-1\) is \(y=-x+c\) where c is given by \\
+		\begin{align*}
+			c\phi'_3(m)+\phi_2(m)=&0\: at\: m=-1 \\
+			c(3)+(-3a)(-1)=&0 \\
+			c(3)+(-3a)(-1)=&0 \\
+		\end{align*}
+		or $c+a=0 \therefore c=-a$ \\
+		$\therefore$ Asymptote is y=-x-a or x+y+a=0 \\
+
+	\chapter{Projectile Motion}
+		\textbf{\textit{Question}}To derive the equations for projectile motion, we assume that the projectile is moving along in a vertical plane and that the only force acting on the projectile is the constant force of gravity, which always points straight downward.
+
+		\noindent \textbf{\textit{Solution}}
+		We assume that the projectile is lauched from the origin at time t = 0 into the first quadrant with an initial velocity $\vec{v_0}$ .If $\vec{v_0}$ makes an angle $\alpha$ with the horizontal and the initial speed of the projectile is $v_{0} = |\vec{v_{0}}|$ , then \\
+		\hspace*{10 em}$\vec{v_{0}} = (v_{0}\cos\alpha)\vec{i} + (v_{0}\sin\alpha)\vec{j}$ and $\vec{r_{0}} = \vec{0}$ \\
+		By Newton's Second Law of Motion $F = m\vec{a}$, so\\[5pt]
+		\hspace*{10 em}$m\vec{a} = (-mg)\vec{j}$\\[5pt]
+		\hspace*{10 em}$\vec{a} = -g\vec{j}$\\[5pt]
+		\hspace*{10 em}$\frac{d^2\vec{r}}{dt^2}$ $= -g\vec{j}$\\[5pt]
+		Integrating twice and using the fact that $\vec{v}(0) = (v_{0}\cos\alpha)\vec{i} + (v_{0}\sin\alpha)\vec{j}$ and $\vec{r}(0) = \vec{0}$,we get\\[5pt]
+		\hspace*{10 em}$\vec{r}(t) = -\frac{1}{2}gt^2\vec{j} + \overrightarrow{v_{0}}t + \overrightarrow{r_{0}}$ \\[5pt]
+		\hspace*{10 em}$\vec{r}(t) = -\frac{1}{2}gt^2\vec{j} + ((v_{0}\cos\alpha)\vec{i} + (v_{0}\sin\alpha)\vec{j}) + \vec{0}$ \\[5pt]
+		\hspace*{10 em}$\vec{r}(t) = (v_{0}\cos\alpha)t\vec{i} + (-\frac{1}{2}gt^2 + (v_{0}\sin\alpha)t)\vec{j}$\\[5pt]
+		\begin{framed}
+			Ideal Projectile Motion Equation \\[5pt]
+			\hspace*{10 em}$\vec{r}(t) = (v_{0}\cos\alpha)t\vec{i} + (-\frac{1}{2}gt^2 + (v_{0}\sin\alpha)t)\vec{j}$\\[5pt]
+		\end{framed}
+		\begin{pspicture}
+			% \psgrid{<->}(0,0)(0,0)(20,20)
+			\psaxes[linewidth=1.2pt,labels=all,ticks=all,linecolor=gray,tickcolor=gray]{->}(0,0)(10,10)
+			\parabola[linecolor=blue](0,0)(5,9)
+			\psline(0,0)(7,7.5)
+			\psline{->}(7,7.5)(7,3.5)
+			\psline{->}(7,7.5)(7,3.5)
+			\psline{->}(7,7.5)(8.2,6)
+			\rput[t](7.7,7.5){$\vec{\textbf{v}}$}
+			\rput[t](7,3){$\vec{\textbf{a}}$}
+			\rput[t](4.3,4){$\vec{\textbf{r}}$}
+			\psarc{->}(0,0){2}{0}{47}
+			\rput[t](1.2,0.7){$\alpha\degree$}
+		\end{pspicture}
+		\\[100pt]
+
+		The angle $\alpha$ is the projectile'slaunch angle.The horizontal and vertical component's of position give the parametric equations \\
+		\hspace*{10 em} $ x = (v_{0}\cos\alpha)t$ and $ y = -\frac{1}{2}gt^2\vec{j} + (v_{0}\sin\alpha)t $ \\
+		where x is the distance downrange and y is altitude of the projectile at time t.
+		Height,Flight Time and Range \\
+		The projectile reaches its height point when its vertical velocity is zero, that is, when\\
+		\hspace*{10 em} $\frac{dy}{dt} = v_{0}\sin\alpha - gt = 0$ and $t = \frac{v_{0}\sin\alpha}{g}$\\ 
+		For this value of time, the altitude of the projectile is\\
+		\hspace*{10 em}$ y_{max} = v_{0}\sin\alpha(\frac{v_{0}\sin\alpha}{g}) -\frac{1}{2}g(\frac{v_{0}\sin\alpha}{g})^2 = \frac{(v_{0}\sin\alpha)^2}{2g}$\\
+		To find when the projectile lands when fired over horizontal ground, we set the vertical component equal to zero and solve for t.\\
+		\hspace*{10 em}$ -\frac{1}{2}gt^2 + (v_{0}\sin\alpha)t = 0$\\
+		\hspace*{10 em}$ t(-\frac{1}{2}gt + (v_{0}\sin\alpha)) = 0$\\
+		\hspace*{10 em}$ t = 0$ or $-\frac{1}{2}gt + (v_{0}\sin\alpha) = 0 $\\
+		\hspace*{10 em}$ t = 0$ or $\frac{1}{2}gt = (v_{0}\sin\alpha)$\\
+		\hspace*{10 em}$ t = 0$ or $ t = \frac{2v_{0}\sin\alpha}{g}$\\
+		To find the projectile's range, we find the value of the horizontal component when $t = \frac{2v_{0}\sin\alpha}{g}$\\
+		\hspace*{6 em} $ x =(v_{0}\cos\alpha)t = (v_{0}\cos\alpha)(\frac{2v_{0}\sin\alpha}{g}) = \frac{v^2_{0}2\sin\alpha\cos\alpha}{g} = \frac{v^2_{0}2\sin2\alpha}{g} $\\
+		The range is largest when $\sin\alpha = 1 $ or when $ 2\alpha = 90\degree$, $\alpha =45\degree$\\
+		\begin{framed}
+			Height, Flight Time and Range for Ideal Motion. \\
+			For ideal projectile motion when an object is launched from the origin over a horizontal surface with initial speed $v_{0}$ and launch angle $\alpha$: \\
+			\hspace*{2 em}Maximum Height $y_{max} = v_{0}\sin\alpha(\frac{v_{0}\sin\alpha}{g}) -\frac{1}{2}g(\frac{v_{0}\sin\alpha}{g})^2 = \frac{(v_{0}\sin\alpha)^2}{2g}$\\
+			\hspace*{10 em} Flight Time $t = \frac{2v_{0}\sin\alpha}{g}$\\
+			\hspace*{10 em} Range $x =  \frac{v^2_{0}2\sin2\alpha}{g}$\\
+		\end{framed}
+	\chapter{Runge-Kutta Method} 
+		\section{Runge-Kutta Method For Simultaneous First Order Equation}
+			Consider the simultaneous equation $\frac{dy}{dx} = f_{1}(x,y,z)$ with the initial conditions $y(x_{0}) = y_{0}$ and $z(x_{0}) = z_{0}$ .Now starting from $(x_{0},y_{0},z_{0})$ the increments $k$ and $l$ in $y$ and $z$ are given by the following formulae. \\ \\ \\
+			\hspace*{4 em}$k_{1} = hf_{1}(x_{0},y_{0},z_{0}); \hspace*{7.5 em} l_{1} = hf_{2}(x_{0},y_{0},z_{0})$\\ \\ \\
+			\hspace*{4 em}$k_{2} = hf_{1}(x_{0} + \frac{h}{2},y_{0}+ \frac{k_{1}}{2},z_{0}+ \frac{l_{1}}{2}); \hspace*{1 em} l_{2} = hf_{2}(x_{0}+ \frac{h}{2},y_{0}+ \frac{k_{1}}{2},z_{0}+ \frac{l_{1}}{2})$\\ \\ \\
+			\hspace*{4 em}$k_{3} = hf_{1}(x_{0}+ \frac{h}{2},y_{0}+ \frac{k_{2}}{2},z_{0}+ \frac{l_{2}}{2}); \hspace*{1 em} l_{3} = hf_{2}(x_{0}+ \frac{h}{2},y_{0}+ \frac{k_{2}}{2},z_{0}+ \frac{l_{2}}{2})$\\ \\ \\
+			\hspace*{4 em}$k_{4} = hf_{1}(x_{0} + h,y_{0} + k _{3},z_{0} + l_{3}); \hspace*{1 em} l_{4} = hf_{2}(x_{0} + h,y_{0} + k_{3},z_{0} + l_{3})$\\ \\ \\
+			\hspace*{4 em}$k = \frac{1}{6}(k_{1} + 2k_{2} + 2k{_3} + k{_4}); \hspace*{4 em} l = \frac{1}{6}(k_{1} + 2k_{2} + 2k{_3} + k{_4})$\\ \\ \\
+			Hence $y_{1} = y_{0} + k, z_{1} = z_{0} + l$\\ \\
+			To compute $y_{2} z_{2}$ we simply replace $x_{0},y_{0},z_{0}$ by $x_{1},y_{1},z_{1}$ in the above formulae. \\ \\
+			If we consider the the second order Runge-Kutta method, then\\
+			\hspace*{4 em}$k_{1} = hf_{1}(x_{0},y_{0},z_{0}); \hspace*{7.5 em} l_{1} = hf_{2}(x_{0},y_{0},z_{0})$\\ \\ \\
+			\hspace*{4 em}$k_{2} = hf_{1}(x_{0} + h,y_{0} + k _{1},z_{0} + l_{1}); \hspace*{1 em} l_{2} = hf_{2}(x_{0} + h,y_{0} + k_{1},z_{0} + l_{1})$\\ \\ \\
+			\hspace*{4 em}$k = \frac{1}{2}(k_{1} + k_{2}); \hspace*{9 em} l = \frac{1}{2}(k_{1} + k_{2})$\\ \\ \\
+			$\therefore$\hspace*{4 em}$y_{1} = y_{0} + k$ and $z_{1} = z_{0} + l$\\ \\ \\
+		\section{Runge-Kutta Method For Second Order Equation}
+			Consider the second order differential equation \\ \\
+			\hspace*{10 em} $ \frac{d^2y}{dx^2} = \phi\left[x,y,\frac{dy}{dx}\right]; \hspace*{2 em}y(x_{0}) = y_{0}; \hspace*{2 em}y'(x_{0}) = y'_{0}$\\ \\ \\
+			Let $\frac{dy}{dx} = z$, then  $ \frac{d^2y}{dx^2} = \frac{dz}{dx}$\\ \\ \\
+			Substituting in $(1)$ , we get $ \frac{dz}{dx} = \phi\left[x,y,z\right]; \hspace*{2 em}y(x_{0}) = y_{0}; \hspace*{2 em}z(x_{0}) = z_{0}$ \\ \\ \\
+			$\therefore$ The problem reduces to solving the simultaneous euation \\ \\ \\
+			\hspace*{10 em}$\frac{dy}{dx} = z = f_{1}(x, y, z)$ \\ \\ \\
+			and \hspace*{10 em}$\frac{dz}{dx} = f_{2}(x, y, z)$ subject to $y(x_{0}) = y_{0}; \hspace*{1 em}z(x_{0}) = z_{0}$ 
+	\chapter{Area Between the Curves}
+		\textbf{\textit{Question}}:Determine the area of the region bounded by $x=-y^2+10$ and $x=(y-2)^2$. \\[8pt] 
+		\noindent\textbf{\textit{Solution}}: \\
+		Fist we need intersection point \\[5pt]
+		\begin{align*}
+			-y^2+10=&(y-2)^2 \\
+			-y^2+10=&y^2-4y+4 \\
+			0=&2y^3-4y-6 \\
+			0=&2(y+1)(y-3)
+		\end{align*}
+
+		The intersection points are $y=-1$ and $y=3$. Here is sketch of the region. \\
+		\begin{pspicture}
+			\psaxes[labels=all,ticks=all]{->}(0,0)(-2,-2)(10,10)
+			%\pscustom[fillstyle=solid,fillcolor=green!60,linestyle=none]
+			%      {
+					\pscurve[linecolor=red](6,4.45)(1,3)(0,2)(9,-1)(12.2,-1.5)
+					\pscurve[linecolor=blue](-2,3.5)(1,3)(10,0)(9,-1)(6,-2)
+			 %     }  
+			\rput[t](5,3){$x=-y^2+10$}
+			\rput[t]{20}(4,4.5){$x=(y-2)^2$}
+		\end{pspicture}
+		\\[125pt]
+
+		This is definitely a region where the second area formula will be easier.  If we used the first formula there would be three different regions that we’d have to look at. \\[5pt]
+		The area in this case is,
+
+		\begin{align*}
+			A=&\int_c^d(right function)-(left function)\mathrm{dy} \\
+			=&\int_{-1}^3-y^2+10-(y-2)^2\mathrm{dy} \\
+			=&\int_{-1}^3-2y^2+4y+6\mathrm{dy} \\
+			=&\left(-\dfrac{2}{3}y^3 + 2y^2 + 6y\right)\big|_{-1}^3 \\
+			=&\dfrac{64}{3} \\
+		\end{align*}
+\end{document}
